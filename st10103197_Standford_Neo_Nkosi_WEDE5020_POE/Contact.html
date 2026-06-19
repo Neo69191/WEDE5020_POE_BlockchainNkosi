@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+      <title>Sweet Vibes Café</title>
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <nav> 
+        <div style="text-align: right;" class="hidden md:flex gap-8 text-lg">
+          <button>
+            <a href="Gallary.html" class="hover:text-[#E89B88] transition-colors">Gallary</a>
+          </button>
+          <button>
+            <a href="Menu.html" class="hover:text-[#E89B88] transition-colors"
+              >Menu</a
+            >
+          </button>
+          <button>
+            <a href="About us.html" class="hover:text-[#E89B88] transition-colors"
+              >About</a
+            >
+          </button>
+
+          <button>
+            <a href="index.html" class="hover:text-[#E89B88] transition-colors"
+              >Home</a
+            > 
+          </button>
+        </div>
+      </div>
+    </nav>
+    <img src="IMG/logo.jpeg" width="150" height="150">
+   
+
+    <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-16">
+    
+    
+    </head>
+<body>
+      <div>
+        <section class="section" id="reservation">
+  <h2>Make a Reservation</h2>
+  <form id="reservation-form" novalidate>
+    <div class="form-group">
+      <label>Name *</label>
+      <input type="text" id="name" required minlength="2">
+    </div>
+
+    <div class="form-group">
+      <label>Email *</label>
+      <input type="email" id="email" required>
+    </div>
+
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="tel" id="phone" pattern="[0-9]{10}">
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Date *</label>
+        <input type="date" id="date" required>
+      </div>
+      <div class="form-group">
+        <label>Time *</label>
+        <input type="time" id="time" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Number of Guests *</label>
+      <input type="number" id="guests" min="1" max="20" required>
+    </div>
+
+    <div class="form-group">
+      <label>Occasion</label>
+      <select id="occasion">
+        <option value="">Select...</option>
+        <option value="birthday">Birthday</option>
+        <option value="anniversary">Anniversary</option>
+        <option value="corporate">Corporate</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Special Requests / Message</label>
+      <textarea id="message" rows="4"></textarea>
+    </div>
+
+    <button type="submit" class="cta-button">Reserve Table</button>
+  </form>
+</section>
+<section id="faq" class="section">
+  <h2>Sweet Answers</h2>
+  <div class="accordion">
+    <div class="accordion-item">
+      <button class="accordion-header">What are your opening hours?</button>
+      <div class="accordion-content">
+        <p>Mon–Fri: 7am – 6pm<br>Sat–Sun: 8am – 7pm</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header">Do you offer vegan & gluten-free options?</button>
+      <div class="accordion-content">
+        <p>Yes! We have a wide range of vegan pastries, dairy-free milks, and gluten-free treats.</p>
+      </div>
+    </div>
+      <div class="accordion-item">
+      <button class="accordion-header">Can I book a table for events?</button>
+      <div class="accordion-content">
+        <p>Absolutely! We host birthdays, baby showers & small corporate events. Use the button below.</p>
+      </div>
+    </div>
+  </div>
+</section>  
+<section class="section">
+  <h2>Get in Touch</h2>
+  <form id="contact-form" novalidate>
+    <div class="form-group">
+      <label>Name *</label>
+      <input type="text" id="cname" required>
+    </div>
+    <div class="form-group">
+      <label>Email *</label>
+      <input type="email" id="cemail" required>
+    </div>
+    <div class="form-group">
+      <label>Subject</label>
+      <select id="subject">
+        <option value="general">General Enquiry</option>
+        <option value="feedback">Feedback</option>
+        <option value="catering">Catering Request</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Message *</label>
+      <textarea id="cmessage" rows="6" required></textarea>
+    </div>
+    <button type="submit" class="cta-button">Send Message</button>
+  </form>
+</section>
+
+<div id="map"></div>
+<footer class="bg-[#3F2A1E] text-white py-16">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <div class="flex justify-center items-center gap-3 mb-6">
+      <h1 class="heading-font text-4xl">Sweet Vibes Café</h1>
+    </div>
+    <p class="text-[#A8B5A2] mb-8">20 Goud cres, brackenfell Cape Town</p>
+    <div class="flex flex-wrap justify-center gap-8 text-sm">
+      <p>📞 +27 82 345 6789</p>
+      <p>🕒 7:00 AM - 7:00 PM Daily</p>
+    </div>
+    <p class="text-xs text-[#A8B5A2]/60 mt-12">© 2026 Sweet Vibes Café. All Rights Reserved.</p>
+  </div>
+</footer>
+<script>
+  // Helper to show error
+function showError(input, message) {
+  let error = input.parentElement.querySelector('.error');
+  if (!error) {
+    error = document.createElement('div');
+    error.className = 'error';
+    input.parentElement.appendChild(error);
+  }
+  error.textContent = message;
+  input.style.borderColor = '#e74c3c';
+}
+
+// Clear error
+function clearError(input) {
+  const error = input.parentElement.querySelector('.error');
+  if (error) error.remove();
+  input.style.borderColor = '#d4a373';
+}
+
+// AJAX Form Submission Helper
+async function submitForm(form, endpoint, successMessage) {
+  const formData = new FormData(form);
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalText = submitButton.textContent;
+
+  // Disable button and show loading
+  submitButton.disabled = true;
+  submitButton.textContent = 'Sending...';
+
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      alert(successMessage);
+      form.reset();
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert("Connection error. Please check your internet and try again.");
+  } finally {
+    // Reset button
+    submitButton.disabled = false;
+    submitButton.textContent = originalText;
+  }
+}
+
+// Reservation Form (AJAX + Validation)
+const resForm = document.getElementById('reservation-form');
+if (resForm) {
+  resForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    // Run validation first
+    let valid = true;
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const date = document.getElementById('date');
+    const guests = document.getElementById('guests');
+
+    // Clear previous errors...
+    document.querySelectorAll('.error').forEach(el => el.remove());
+    [name, email, date, guests].forEach(clearError);
+
+    if (name.value.trim().length < 2) { showError(name, "Name must be at least 2 characters"); valid = false; }
+    if (!email.checkValidity()) { showError(email, "Please enter a valid email"); valid = false; }
+    if (!date.value) { showError(date, "Please select a date"); valid = false; }
+    if (guests.value < 1) { showError(guests, "At least 1 guest required"); valid = false; }
+
+    if (!valid) return;
+
+    // Submit via AJAX
+    await submitForm(resForm, 'https://formspree.io/f/your-form-id-here',
+      "✅ Thank you! Your reservation request has been received. We'll contact you soon.");
+  });
+}
+
+// Contact Form (AJAX + Validation)
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    let valid = true;
+    const name = document.getElementById('cname');
+    const email = document.getElementById('cemail');
+    const message = document.getElementById('cmessage');
+
+    document.querySelectorAll('.error').forEach(el => el.remove());
+    [name, email, message].forEach(clearError);
+
+    if (name.value.trim().length < 2) { showError(name, "Name is required"); valid = false; }
+    if (!email.checkValidity()) { showError(email, "Valid email is required"); valid = false; }
+    if (message.value.trim().length < 10) { showError(message, "Message must be at least 10 characters"); valid = false; }
+
+    if (!valid) return;
+
+    // Submit via AJAX
+    await submitForm(contactForm, 'https://formspree.io/f/your-form-id-here',
+      "✅ Thank you! Your message has been sent.");
+  });
+}
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script>
+        // Approximate coordinates for Sweet Vibes Cafe area (Eikendal / Kraaifontein, Cape Town)
+        const cafeLat = -33.864;
+        const cafeLng = 18.7095;
+
+        // Initialize the map centered on Sweet Vibes Cafe
+        const map = L.map('map').setView([cafeLat, cafeLng], 17); // High zoom for street-level view
+
+        // OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors',
+            maxZoom: 19
+        }).addTo(map);
+
+        // Main marker for Sweet Vibes Cafe
+        const cafeMarker = L.marker([cafeLat, cafeLng]).addTo(map);
+        cafeMarker.bindPopup(`
+            <div class="popup-content">
+                <b>🍰 Sweet Vibes Cafe</b><br>
+                Eikendal, Kraaifontein<br>
+                Cape Town, South Africa<br><br>
+                <i>Great coffee, sweet treats & good vibes!</i><br>
+                Click anywhere on the map to explore nearby spots.
+            </div>
+        `).openPopup();
+
+        // Circle highlighting the cafe area
+        L.circle([cafeLat, cafeLng], {
+            color: '#ff69b4',      // Pink for sweet vibes
+            fillColor: '#ff69b4',
+            fillOpacity: 0.15,
+            radius: 250
+        }).addTo(map);
+
+        // Layer switcher (Street + Satellite)
+        const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap'
+        });
+
+        const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri'
+        });
+
+        const baseLayers = {
+            "Street Map": osm,
+            "Satellite View": satellite
+        };
+
+        L.control.layers(baseLayers).addTo(map);
+
+        // Click to add custom markers (e.g. for parking, nearby spots)
+        map.on('click', function(e) {
+            const newMarker = L.marker(e.latlng).addTo(map);
+            newMarker.bindPopup(`
+                <b>New Spot</b><br>
+                Lat: ${e.latlng.lat.toFixed(5)}<br>
+                Lng: ${e.latlng.lng.toFixed(5)}<br>
+                <small>Maybe another cafe table or parking?</small>
+            `).openPopup();
+        });
+
+        console.log("Sweet Vibes Cafe interactive map loaded!");
+    </script>
+</body>
+</html>
